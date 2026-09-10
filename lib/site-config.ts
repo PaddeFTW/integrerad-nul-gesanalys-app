@@ -1,31 +1,32 @@
 export const siteConfig = {
-  name: "app",
-  shortName: "app",
+  name: "Integrerad nulägesanalys",
+  shortName: "Nuläge",
   description:
-    "Official starter template for applications, focused on reusable architecture, design tokens, layouts, and UI primitives.",
+    "Gemensam nulägesanalys för kvalitets- och miljöledning enligt ISO 9001 och ISO 14001.",
   links: {
-    repository: "https://github.com/PaddeFTW/app-template",
+    repository: "https://github.com/PaddeFTW/integrerad-nul-gesanalys-app",
+    template: "https://github.com/PaddeFTW/app-template",
   },
   docs: [
     {
-      title: "Project Brief",
-      href: "/PROJECT_BRIEF.md",
-      description: "Purpose, non-goals, and platform objectives.",
+      title: "Kravspecifikation",
+      href: "/docs/01_KRAVSPECIFIKATION.md",
+      description: "Vision, IA, datamodell och acceptanskriterier.",
     },
     {
-      title: "Design System",
-      href: "/DESIGN_SYSTEM.md",
-      description: "Token model, visual principles, and component guidance.",
+      title: "Produktionsprompt",
+      href: "/docs/02_PRODUKTIONSPROMPT.md",
+      description: "Prompt för Cursor / v0.",
     },
     {
-      title: "Architecture",
-      href: "/ARCHITECTURE.md",
-      description: "Folder structure, layering, and extension rules.",
+      title: "Plan",
+      href: "/docs/03_PLAN.md",
+      description: "Byggordning v0 till v1.",
     },
     {
-      title: "Roadmap",
-      href: "/ROADMAP.md",
-      description: "Planned evolution of the shared starter foundation.",
+      title: "Startprompt",
+      href: "/docs/04_STARTPROMPT.md",
+      description: "Första meddelandet i Cursor.",
     },
   ],
 } as const;

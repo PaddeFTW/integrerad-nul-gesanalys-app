@@ -1,64 +1,27 @@
-# Project Brief
+# Project Brief – Integrerad nulägesanalys
 
 ## Purpose
 
-Create the official reusable starter template for applications.
+Hjälpa SME att samla vad som redan finns i verksamheten inför en integrerad kvalitets- och miljömanual. Nulägesanalysen är inte manualen.
 
-This repository exists to give every future product a shared baseline for:
+## What this repository is
 
-- architecture
-- user interface standards
-- design tokens
-- layout composition
-- documentation practices
-- developer onboarding
+- Produktapp ovanpå Quality WorX / app-template
+- Wizard Ja / Nej / Delvis per ISO-kravområde (9001 + 14001)
+- Register för kunder, leverantörer, medarbetare, kompetens, blanketter
 
-## What This Repository Is
+## What this repository is not
 
-- a platform foundation named **app**
-- a reusable UI and layout starter
-- a design-system-aligned frontend base using v0 Modern Minimal
-- a documented reference implementation for future teams
+- Inte en PDF-kopia av blanketten
+- Inte miljöutredning-appen
+- Inte ett ISO-betyg eller mognadsindex
 
-## What This Repository Is Not
+## Standard shell
 
-- a complete application
-- a module for a specific product workflow
-- a business-domain implementation
-- a place for product-specific data models or process logic
-
-## Platform Goals
-
-1. Give every team the same high-quality starting point.
-2. Reduce repeated setup work across future repositories.
-3. Encourage visual consistency through one shared design system.
-4. Keep foundational code clean, neutral, and scalable.
-5. Separate platform concerns from product concerns early.
-
-Future product decisions should follow `docs/PRODUCT_PRINCIPLES.md`.
-
-## Standard Shell
-
-Dashboard and sidebar are the default application pattern.
-
-## Success Criteria
-
-The template is successful when a future team can clone it and immediately inherit:
-
-- the Modern Minimal visual baseline
-- a clean folder structure
-- reusable layout shells
-- reusable UI primitives
-- a semantic theme and token system
-- clear extension guidance
+Dashboard + sidebar från app-template.
 
 ## Constraints
 
-- no business logic
-- no product-specific pages
-- no domain-specific forms
-- no mock workflows presented as real features
-
-## Long-Term Role
-
-This repository should remain the canonical frontend baseline and evolve carefully as shared standards mature.
+- Bevara 100 % av originalets innebörd
+- Förbättringar bara additiva och spårbara
+- Neutral Minimal, ingen ERP-känsla

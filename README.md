@@ -1,108 +1,39 @@
-# app
+# Integrerad nulägesanalys – Kvalitet och miljö
 
-Official starter template for applications.
+Digital produkt för gemensam nulägesanalys inför kvalitets- och miljömanual enligt ISO 9001 och ISO 14001.
 
-This repository is a foundation, not a product. It provides shared architecture, design tokens, layout shells, UI primitives, and documentation standards that applications can extend.
+Startgrund: [app-template](https://github.com/PaddeFTW/app-template). Bygg aldrig från noll.
 
-## Principles
+## Source of Truth
 
-- Build once at the platform layer, reuse across products.
-- Prefer composition over feature-specific abstractions.
-- Keep domain logic out of the starter.
-- Document decisions so future teams can move fast without guesswork.
+- `docs/SOURCE_OF_TRUTH.md`
+- Originalblankett: Nulägesanalys Kvalitet och Miljö (.dot)
+- `docs/01_KRAVSPECIFIKATION.md`
 
-## Tech Stack
+Dokumentet är Source of Truth. Ändra inte frågetexterna.
 
-- Next.js
-- TypeScript
-- Tailwind CSS
-- shadcn/ui-compatible structure
-- Radix UI
-- Lucide React
+## Stack
 
-## Included Foundation
+Next.js App Router · TypeScript · Tailwind · shadcn/ui · Supabase
 
-- semantic design token system (v0 Modern Minimal)
-- reusable layout shells
-- dashboard and sidebar as the standard application shell
-- neutral UI primitives
-- reusable page states
-- theme-ready light and dark styling
-- platform architecture documentation
+Design: Neutral Minimal (Notion / Linear / Apple / Arc / Raycast)
 
-## Folder Structure
+## Auth
 
-```text
-app/
-components/
-  common/
-  layout/
-  ui/
-docs/
-hooks/
-lib/
-public/
-styles/
-types/
-```
+E-post + lösenord, skapa konto, magic link, Google, Facebook, GitHub.
 
-## Primary Layout Shells
+## Docs
 
-- `AppLayout`
-- `DashboardLayout`
-- `DocumentLayout`
-- `SettingsLayout`
+- `docs/01_KRAVSPECIFIKATION.md`
+- `docs/02_PRODUKTIONSPROMPT.md`
+- `docs/03_PLAN.md`
+- `docs/04_STARTPROMPT.md`
 
-Dashboard with sidebar is the default application pattern.
-
-## Core UI Primitives
-
-- `Button`
-- `Card`
-- `Input`
-- `Textarea`
-- `Select`
-- `Dialog`
-- `Table`
-- `Badge`
-- `Progress`
-
-## Shared Presentation Components
-
-- `Sidebar`
-- `Topbar`
-- `Breadcrumb`
-- `PageHeader`
-- `EmptyState`
-- `LoadingState`
-- `ErrorState`
-
-## Documentation
-
-- `PROJECT_BRIEF.md`
-- `DESIGN_SYSTEM.md`
-- `ARCHITECTURE.md`
-- `ROADMAP.md`
-- `CHANGELOG.md`
-- `AGENTS.md`
-- `docs/PRODUCT_PRINCIPLES.md`
-- `docs/`
-
-## Getting Started
+## Dev
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Non-Goals
-
-This template does not include:
-
-- business workflows
-- product-specific routes
-- data models
-- API integrations
-- product module logic
-
-Clone this repository and add those concerns on top of the shared foundation.
+v0 först. Merga inte till produktion förrän preview READY och sparloop fungerar.
