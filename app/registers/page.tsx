@@ -1,3 +1,33 @@
 import Link from "next/link";
+import { BarChart3, BookOpen, ClipboardCheck, FilePlus2, Gauge, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
-export default function RegistersPage(){return <main className="min-h-screen bg-background px-6 py-10"><div className="mx-auto max-w-3xl"><h1 className="text-3xl font-semibold">Register</h1><p className="mt-3 text-muted-foreground">Här samlas register när de fylls i.</p><div className="mt-10 rounded-xl border border-dashed border-border p-12 text-center"><p className="font-medium">Inga register ännu</p><p className="mt-2 text-sm text-muted-foreground">Det finns inga poster att visa.</p><Button asChild variant="outline" className="mt-5"><Link href="/">Till översikten</Link></Button></div></div></main>}
+import { DashboardLayout } from "@/components/layout/dashboard-layout";
+import type { NavItem } from "@/types";
+
+const NAV_ITEMS: NavItem[] = [
+  { title: "Översikt", href: "/", icon: <Gauge className="size-4" /> },
+  { title: "Ny analys", href: "/analysis/new", icon: <FilePlus2 className="size-4" /> },
+  { title: "Täckning & Gap", href: "/gap", icon: <BarChart3 className="size-4" /> },
+  { title: "Register", href: "/registers", icon: <ClipboardCheck className="size-4" /> },
+  { title: "Vägledning", href: "/guidance", icon: <BookOpen className="size-4" /> },
+  { title: "Inställningar", href: "/settings", icon: <Settings className="size-4" /> },
+];
+
+export default function RegistersPage() {
+  return (
+    <DashboardLayout title="Register" navigation={NAV_ITEMS}>
+      <div className="mx-auto max-w-3xl">
+        <p className="mt-3 text-muted-foreground">Här samlas register när de fylls i.</p>
+        <div className="mt-10 rounded-xl border border-dashed border-border p-12 text-center">
+          <p className="font-medium">Inga register ännu</p>
+          <p className="mt-2 text-sm text-muted-foreground">Det finns inga poster att visa.</p>
+        </div>
+        <div className="mt-6">
+          <Button asChild variant="outline" className="w-full">
+            <Link href="/">Tillbaka till översikt</Link>
+          </Button>
+        </div>
+      </div>
+    </DashboardLayout>
+  );
+}
