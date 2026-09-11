@@ -1,0 +1,3 @@
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+export default function RegistersPage(){return <main className="min-h-screen bg-background px-6 py-10"><div className="mx-auto max-w-3xl"><h1 className="text-3xl font-semibold">Register</h1><p className="mt-3 text-muted-foreground">Här samlas register när de fylls i.</p><div className="mt-10 rounded-xl border border-dashed border-border p-12 text-center"><p className="font-medium">Inga register ännu</p><p className="mt-2 text-sm text-muted-foreground">Det finns inga poster att visa.</p><Button asChild variant="outline" className="mt-5"><Link href="/">Till översikten</Link></Button></div></div></main>}
