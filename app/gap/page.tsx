@@ -75,7 +75,8 @@ export default function GapPage() {
               {items.map((item) => (
                 <div key={item.id} className="rounded-xl border border-border bg-card p-5">
                   <p className="font-medium">{item.label}</p>
-                  <p className="mt-2 text-sm text-muted-foreground">{item.scope}</p>
+                  <p className="mt-2 text-sm text-muted-foreground">{item.sectionId} · {item.scope}</p>
+                  {analysis.notes[item.id] ? <p className="mt-3 border-t border-border pt-3 text-sm text-muted-foreground">{analysis.notes[item.id]}</p> : null}
                 </div>
               ))}
             </div>

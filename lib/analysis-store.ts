@@ -1,9 +1,10 @@
-import { AnswerValue, CatalogQuestion, QUESTIONS, SECTIONS, Scope } from "@/lib/catalog/questions";
+import { AnswerValue, CatalogQuestion, QUESTIONS, SECTIONS, Scope, COMPANY_FIELDS } from "@/lib/catalog/questions";
 
 export type SystemScope = "K" | "M" | "KM";
 export type Analysis = {
   id: string;
   company: string;
+  companyFields: Partial<Record<(typeof COMPANY_FIELDS)[number], string>>;
   systems: SystemScope[];
   design: AnswerValue | null;
   answers: Record<string, AnswerValue>;
@@ -27,9 +28,13 @@ export function sectionQuestions(analysis: Analysis, sectionId: string) {
   return visibleQuestions(analysis).filter((question) => question.sectionId === sectionId);
 }
 
+export function visibleSections(analysis: Analysis) {
+  return SECTIONS.filter((section) => section.id === "company" || sectionQuestions(analysis, section.id).length > 0);
+}
+
 export function coverage(analysis: Analysis) {
   const visible = visibleQuestions(analysis);
-  const answered = visible.filter((question) => analysis.answers[question.id]).length;
+  const answered = visible.filter((question) => Boolean(analysis.answers[question.id])).length;
   return visible.length ? Math.round((answered / visible.length) * 100) : 0;
 }
 
@@ -48,11 +53,14 @@ export function saveAnalysis(analysis: Analysis) {
   window.localStorage.setItem(key, JSON.stringify([analysis, ...all]));
 }
 
-export function newAnalysis(company = "") : Analysis {
+export function newAnalysis(company = ""): Analysis {
   const now = new Date().toISOString();
-  return { id: crypto.randomUUID(), company, systems: ["K", "M"], design: null, answers: {}, notes: {}, createdAt: now, updatedAt: now };
+  return { id: crypto.randomUUID(), company, companyFields: company ? { [COMPANY_FIELDS[0]]: company } : {}, systems: ["K", "M"], design: null, answers: {}, notes: {}, createdAt: now, updatedAt: now };
 }
 
-export function getAnalysis(id: string) { return loadAnalyses().find((analysis) => analysis.id === id); }
+export function getAnalysis(id: string) {
+  const analysis = loadAnalyses().find((item) => item.id === id);
+  return analysis ? { ...analysis, companyFields: analysis.companyFields || {} } : undefined;
+}
 export { SECTIONS };
-export const scopeLabel: Record<Scope, string> = { K: "Kvalitet", M: "Miljö", KM: "Kvalitet + miljö" };
+export const scopeLabel: Record<Scope, string> = { K: "K", M: "M", KM: "KM" };
